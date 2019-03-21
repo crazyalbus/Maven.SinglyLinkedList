@@ -5,28 +5,28 @@ import java.util.List;
 /**
  * Created by leon on 1/10/18.
  */
-public class SinglyLinkedList {
+public class SinglyLinkedList<T> {
 
     Node startingNode;
 
-    public SinglyLinkedList(Object element) {
+    public SinglyLinkedList(T element) {
         this.startingNode = new Node(element);
     }
 
     public class Node {
-        Object element;
+        T element;
         Node nextNode;
 
-        public Node(Object element) {
+        public Node(T element) {
             this.element = element;
             this.nextNode = null;
         }
 
-        public Object getElement() {
+        public T getElement() {
             return element;
         }
 
-        public void setElement(Object element) {
+        public void setElement(T element) {
             this.element = element;
         }
 
@@ -39,7 +39,7 @@ public class SinglyLinkedList {
         }
     }
 
-    public void add(Object element) {
+    public void add(T element) {
         Node currentNode = startingNode;
         while(currentNode.getNextNode() != null) {
             currentNode = currentNode.getNextNode();
@@ -63,14 +63,14 @@ public class SinglyLinkedList {
         return currentNode;
     }
 
-    public boolean contains(Object elementToLookFor) {
+    public boolean contains(T elementToLookFor) {
         if(find(elementToLookFor) != -1) {
             return true;
         }
         return false;
     }
 
-    public int find(Object elementToLookFor) {
+    public int find(T elementToLookFor) {
         Node currentNode = startingNode;
         int currentIndex = 0;
         do {

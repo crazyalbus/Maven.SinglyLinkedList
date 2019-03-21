@@ -13,7 +13,7 @@ public class SinglyLinkedListTest {
     public void listConstructorTest() {
 
         //Given
-        Object element = "this element";
+        String element = "this element";
 
         //When
         SinglyLinkedList testList = new SinglyLinkedList(element);
@@ -26,8 +26,8 @@ public class SinglyLinkedListTest {
     @Test
     public void updateNextNodeTest() {
         //Given
-        Object element1 = "this element";
-        SinglyLinkedList testList = new SinglyLinkedList(element1);
+        String element0 = "this element";
+        SinglyLinkedList testList = new SinglyLinkedList(element0);
         SinglyLinkedList.Node testNode = testList.startingNode;
 
         //When
@@ -41,12 +41,12 @@ public class SinglyLinkedListTest {
     public void addTest() {
 
         //Given
-        Object element1 = "this element";
-        Object element2 = "new element";
-        SinglyLinkedList testList = new SinglyLinkedList(element1);
+        String element0 = "this element";
+        int element1 = 50;
+        SinglyLinkedList testList = new SinglyLinkedList(element0);
 
         //When
-        testList.add(element2);
+        testList.add(element1);
 
         //Then
         Assert.assertTrue(testList.startingNode.getNextNode() instanceof Object);
@@ -55,10 +55,10 @@ public class SinglyLinkedListTest {
     @Test
     public void removeTest() {
         //Given
-        Object element1 = "this element";
-        Object element2 = "new element";
-        SinglyLinkedList testList = new SinglyLinkedList(element1);
-        testList.add(element2);
+        String element0 = "this element";
+        Integer element1 = 1;
+        SinglyLinkedList testList = new SinglyLinkedList(element0);
+        testList.add(element1);
 
         //When
         Assert.assertNotNull(testList.startingNode.getNextNode());
@@ -72,9 +72,9 @@ public class SinglyLinkedListTest {
     @Test
     public void containsTestReturnsTrue() {
         //Given
-        Object element0 = "this element";
-        Object element1 = "new element";
-        Object element2 = "another element";
+        String element0 = "this element";
+        Integer element1 = 50;
+        String element2 = "another element";
         SinglyLinkedList testList = new SinglyLinkedList(element0);
         testList.add(element1);
         testList.add(element2);
@@ -89,9 +89,9 @@ public class SinglyLinkedListTest {
     @Test
     public void containsTestReturnsFalse() {
         //Given
-        Object element0 = "this element";
-        Object element1 = "new element";
-        Object element2 = "another element";
+        String element0 = "this element";
+        Integer element1 = 50;
+        String element2 = "another element";
         SinglyLinkedList testList = new SinglyLinkedList(element0);
         testList.add(element1);
 
@@ -106,9 +106,9 @@ public class SinglyLinkedListTest {
     @Test
     public void findTestReturnsPositive() {
         //Given
-        Object element0 = "this element";
-        Object element1 = "new element";
-        Object element2 = "another element";
+        String element0 = "this element";
+        Integer element1 = 50;
+        String element2 = "another element";
         SinglyLinkedList testList = new SinglyLinkedList(element0);
         testList.add(element1);
         testList.add(element2);
@@ -123,9 +123,9 @@ public class SinglyLinkedListTest {
     @Test
     public void findTestReturnsNegative() {
         //Given
-        Object element0 = "this element";
-        Object element1 = "new element";
-        Object element2 = "another element";
+        String element0 = "this element";
+        Integer element1 = 50;
+        String element2 = "another element";
         SinglyLinkedList testList = new SinglyLinkedList(element0);
         testList.add(element1);
 
@@ -139,9 +139,9 @@ public class SinglyLinkedListTest {
     @Test
     public void sizeTest() {
         //Given
-        Object element0 = "this element";
-        Object element1 = "new element";
-        Object element2 = "another element";
+        String element0 = "this element";
+        Integer element1 = 50;
+        String element2 = "another element";
         SinglyLinkedList testList = new SinglyLinkedList(element0);
         testList.add(element1);
         testList.add(element2);
@@ -156,17 +156,17 @@ public class SinglyLinkedListTest {
     @Test
     public void getTest() {
         //Given
-        Object element1 = "this element";
-        Object element2 = "new element";
+        Object element0 = "this element";
+        Integer element1 = 50;
         SinglyLinkedList testList = new SinglyLinkedList(element1);
-        testList.add(element2);
+        testList.add(element1);
 
         //When
         Object result = testList.get(1);
 
 
         //Then
-        Assert.assertEquals(element2, result);
+        Assert.assertEquals(element1, result);
     }
 
     //    @Test
