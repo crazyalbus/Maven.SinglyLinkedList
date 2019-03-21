@@ -49,20 +49,24 @@ public class SinglyLinkedList {
     }
 
     public void remove(int index) {
+        Node currentNode = getNodeByIndex(index);;
+        currentNode.setElement(null);
+    }
+
+    private Node getNodeByIndex(int index) {
         Node currentNode = startingNode;
         int currentIndex = 0;
         while (currentIndex < index) {
             currentNode = currentNode.getNextNode();
             currentIndex ++;
         }
-        currentNode.setElement(null);
+        return currentNode;
     }
 
     public boolean contains(Object elementToLookFor) {
         if(find(elementToLookFor) != -1) {
             return true;
         }
-
         return false;
     }
 
@@ -90,8 +94,12 @@ public class SinglyLinkedList {
         return currentSize;
     }
 
+    public Object get(int index) {
+        Node currentNode = getNodeByIndex(index);
+        return currentNode.getElement();
+    }
+
 }
 
-//get -- returns the element at the specified index
 //copy -- returns a new linked list containing the same values (look up deep versus shallow copy)
 //sort -- sorts the list using your algorithm of choice. You must perform the sorting yourself (no fair using someone else's library)

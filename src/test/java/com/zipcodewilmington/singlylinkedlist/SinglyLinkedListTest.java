@@ -153,6 +153,22 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(3, result);
     }
 
+    @Test
+    public void getTest() {
+        //Given
+        Object element1 = "this element";
+        Object element2 = "new element";
+        SinglyLinkedList testList = new SinglyLinkedList(element1);
+        testList.add(element2);
+
+        //When
+        Object result = testList.get(1);
+
+
+        //Then
+        Assert.assertEquals(element2, result);
+    }
+
     //    @Test
 //    public void nodeConstructorTest() {
 //
